@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Next.js Blogging Platform
 
-First, run the development server:
+## Introduction
+This project is a blogging platform developed using Next.js and MongoDB. It allows users to perform CRUD operations on blog posts, supports pagination, and is styled with Tailwind CSS for a responsive design.
 
+## Features
+- CRUD operations on blog posts.
+- Pagination support to navigate through posts.
+- Dynamic interactions using Next.js API routes.
+- Responsive design using Tailwind CSS.
+
+## Installation
+To install the necessary packages, run the following command:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Running the Project
+To start the development server, run:
+```bash
+npm run dev
+```
+This will serve the site at `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## API Endpoints
+The application provides several endpoints for managing blog posts:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### GET `/api/posts`
+Fetches paginated list of posts.
+- **Query Parameters**:
+  - `page`: Specifies the page number.
+  - `limit`: Specifies the number of posts per page.
 
-## Learn More
+### POST `/api/posts`
+Creates a new post.
+- **Body Parameters**:
+  - `title`: Title of the post.
+  - `content`: Content of the post.
 
-To learn more about Next.js, take a look at the following resources:
+### PUT `/api/posts/:postId`
+Updates an existing post specified by its ID.
+- **URL Parameters**:
+  - `postId`: Unique identifier of the post.
+- **Body Parameters**:
+  - `title`: Updated title of the post.
+  - `content`: Updated content of the post.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### DELETE `/api/posts/:postId`
+Deletes a specific post by its ID.
+- **URL Parameters**:
+  - `postId`: Unique identifier of the post to be deleted.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### GET `/api/posts/:postId`
+Retrieves a specific post by its ID.
+- **URL Parameters**:
+  - `postId`: Unique identifier of the post.
 
-## Deploy on Vercel
+## Usage Examples
+Here are some examples on how to interact with the API using a tool like curl or through any HTTP client like Postman.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Examples
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Add Post
+
+![Add Post](https://github.com/hamzaennassel/CodingChallenge-SoftwareEngineerIntern-Hamza-Ennassel/assets/134778417/f6bca55d-a280-4294-802f-f550ab6b01a2)
+
+### List Posts
+
+![list Posts](https://github.com/hamzaennassel/CodingChallenge-SoftwareEngineerIntern-Hamza-Ennassel/assets/134778417/83bba79c-e902-4781-b76c-4ad4d02133d2)
+
+
+### Update Post
+
+![Update Post](https://github.com/hamzaennassel/CodingChallenge-SoftwareEngineerIntern-Hamza-Ennassel/assets/134778417/7f523676-8b73-424e-957f-2315e745a68a)
+
+### Show Post
+
+![Show Post](https://github.com/hamzaennassel/CodingChallenge-SoftwareEngineerIntern-Hamza-Ennassel/assets/134778417/1fd0206a-187a-4b9e-9f61-47267d5e7425)
+
+## License
+This project is open-sourced under the MIT License. See the LICENSE file for more information.
